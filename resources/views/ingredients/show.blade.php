@@ -1,9 +1,7 @@
-<h1>Ингредиент: {{ $ingredient->name }}</h1>
-<p>Единица измерения: {{ $ingredient->measurement_unit }}</p>
-<h2>Используется в блюдах:</h2>
+<h1>{{ $ingredient->name }}</h1>
+<h2>Блюда</h2>
 <ul>
     @foreach($ingredient->dishes as $dish)
-        <li>{{ $dish->name }} - {{ $dish->pivot->amount }} {{ $ingredient->measurement_unit }}</li>
+        <li>{{ $dish->name }} ({{ $dish->pivot->quantity }})</li>
     @endforeach
 </ul>
-

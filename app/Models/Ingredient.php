@@ -8,15 +8,10 @@ class Ingredient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'measurement_unit'];
+    protected $fillable = ['name', 'unit'];
 
-    public function recipes()
-    {
-        return $this->hasMany(Recipe::class, 'ingredient_id');
-    }
     public function dishes()
     {
-        return $this->belongsToMany(Dish::class, 'recipes')->withPivot('amount');
+        return $this->belongsToMany(Dish::class, 'recipes')->withPivot('quantity');
     }
-
 }

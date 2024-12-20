@@ -9,21 +9,15 @@ class Dish extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'preparation_method', 'preparation_time', 'category_id'];
+    protected $fillable = ['name', 'category_id', 'cooking_method', 'cooking_time'];
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
-    }
-
-    public function recipes()
-    {
-        return $this->hasMany(Recipe::class, 'dish_id');
+        return $this->belongsTo(Category::class);
     }
 
     public function ingredients()
     {
-        return $this->belongsToMany(Ingredient::class, 'recipes')->withPivot('amount');
+        return $this->belongsToMany(Ingredient::class, 'recipes')->withPivot('quantity');
     }
-
 }
