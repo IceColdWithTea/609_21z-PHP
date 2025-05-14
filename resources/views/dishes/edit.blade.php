@@ -10,7 +10,7 @@
 
 <form action="{{ route('dishes.update', $dish->id) }}" method="POST">
     @csrf
-    @method('PUT') {{-- Используем метод PUT для обновления --}}
+    @method('PUT')
 
     <div>
         <label for="name">Название блюда:</label>

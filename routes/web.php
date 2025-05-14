@@ -26,4 +26,4 @@ Route::get('/dishes/create', [DishController::class, 'create'])->name('dishes.cr
 
 Route::post('/dishes', [DishController::class, 'store'])->name('dishes.store');
 
-Route::put('/dishes/{dish}', [DishController::class, 'update'])->name('dishes.update');
+Route::get('/dishes/{dish}/edit', [DishController::class, 'edit'])->name('dishes.edit');
