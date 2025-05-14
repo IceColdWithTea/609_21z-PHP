@@ -31,12 +31,16 @@
 
     <div>
         <label>Способ приготовления:</label><br>
-        <input type="radio" id="method_boiling" name="cooking_method" value="Варить" {{ $dish->cooking_method == 'boiling' ? 'checked' : '' }}>
+        <input type="radio" id="method_boiling" name="cooking_method" value="Варить" {{ $dish->cooking_method == 'Варить' ? 'checked' : '' }}>
         <label for="method_boiling">Варка</label><br>
-        <input type="radio" id="method_frying" name="cooking_method" value="Жарить" {{ $dish->cooking_method == 'frying' ? 'checked' : '' }}>
+        <input type="radio" id="method_frying" name="cooking_method" value="Жарить" {{ $dish->cooking_method == 'Жарить' ? 'checked' : '' }}>
         <label for="method_frying">Жарка</label><br>
-        <input type="radio" id="method_baking" name="cooking_method" value="Запекать" {{ $dish->cooking_method == 'baking' ? 'checked' : '' }}>
-        <label for="method_baking">Запекание</label>
+        <input type="radio" id="method_baking" name="cooking_method" value="Запекать" {{ $dish->cooking_method == 'Запекать' ? 'checked' : '' }}>
+        <label for="method_baking">Запекание</label><br>
+        <input type="radio" id="method_mixing" name="cooking_method" value="Смешать" {{ $dish->cooking_method == 'Смешать' ? 'checked' : '' }}>
+        <label for="method_mixing">Смешивание</label><br>
+        <input type="radio" id="method_freezing" name="cooking_method" value="Заморозить" {{ $dish->cooking_method == 'Заморозить' ? 'checked' : '' }}>
+        <label for="method_freezing">Заморозка</label>
     </div>
 
     <div>

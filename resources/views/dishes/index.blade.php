@@ -8,33 +8,35 @@
 <body>
 <h1>Список блюд</h1>
 
-<table>
+<table border="2" width="100%" cellspacing="2" cellpadding="5">
     <thead>
     <tr>
-        <th>ID</th>
-        <th>Название</th>
-        <th>Категория</th>
-        <th>Действия</th>
+        <th border="2">ID</th>
+        <th border="2">Название</th>
+        <th border="2">Категория</th>
+        <th border="2">Действия</th>
     </tr>
     </thead>
     <tbody>
     @foreach ($dishes as $dish)
         <tr>
-            <td>{{ $dish->id }}</td>
-            <td>{{ $dish->name }}</td>
-            <td>{{ $dish->category->name ?? 'Нет категории' }}</td>
-            <td>
-                <a href="{{ route('dishes.edit', $dish->id) }}">Редактировать</a>
+            <td border="2">{{ $dish->id }}</td>
+            <td border="2">{{ $dish->name }}</td>
+            <td border="2">{{ $dish->category->name ?? 'Нет категории' }}</td>
+            <td border="2">
                 <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить это блюдо?')">Удалить</button>
                 </form>
+                <a href="{{ route('dishes.edit', $dish->id) }}">Редактировать</a>
             </td>
         </tr>
     @endforeach
     </tbody>
 </table>
+
+{{ $dishes->links() }}
 
 <a href="{{ route('dishes.create') }}">Добавить новое блюдо</a>
 </body>

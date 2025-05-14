@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Dish;
 use App\Models\Ingredient;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class DishController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $dishes = Dish::all();
-        return view('dishes.index', compact('dishes'));
+        $perPage = $request->input('perPage', 2);
+        $dishes = Dish::paginate($perPage)->withQueryString();
+        return view('dishes.index', ['dishes' => $dishes]);
     }
 
     public function show($id)

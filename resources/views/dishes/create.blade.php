@@ -33,7 +33,11 @@
         <input type="radio" id="method_frying" name="cooking_method" value="Жарить">
         <label for="method_frying">Жарка</label><br>
         <input type="radio" id="method_baking" name="cooking_method" value="Запекать">
-        <label for="method_baking">Запекание</label>
+        <label for="method_baking">Запекание</label><br>
+        <input type="radio" id="method_baking" name="cooking_method" value="Смешать">
+        <label for="method_baking">Смешивание</label><br>
+        <input type="radio" id="method_baking" name="cooking_method" value="Заморозить">
+        <label for="method_baking">Заморозка</label>
     </div>
 
     <div>
