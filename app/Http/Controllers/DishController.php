@@ -25,7 +25,8 @@ class DishController extends Controller
         $categories = Category::all();
         $ingredients = Ingredient::all();
 
-        return view('dishes.create', compact('categories', 'ingredients'));
+        return view('dishes.create', ['categories' => $categories, 'ingredients' => $ingredients,
+        ]);
     }
 
     public function store(\Illuminate\Http\Request $request)
