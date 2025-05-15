@@ -8,7 +8,7 @@
 <body>
 <h1>Создание нового блюда</h1>
 
-<form action="{{ route('dishes.store') }}" method="POST">
+<form action="/dishes" method="POST">
     @csrf
 
     <div>
@@ -48,6 +48,6 @@
     <button type="submit">Сохранить блюдо</button>
 </form>
 
-<a href="{{ route('dishes.index') }}">Назад к списку блюд</a>
+<a href="/dishes">Назад к списку блюд</a>
 </body>
 </html>

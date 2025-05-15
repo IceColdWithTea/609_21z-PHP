@@ -8,7 +8,7 @@
 <body>
 <h1>Редактирование блюда</h1>
 
-<form action="{{ route('dishes.update', $dish->id) }}" method="POST">
+<form action="/dishes/{{ $dish->id }}" method="POST">
     @csrf
     @method('PUT')
 
@@ -51,6 +51,6 @@
     <button type="submit">Сохранить изменения</button>
 </form>
 
-<a href="{{ route('dishes.index') }}">Назад к списку блюд</a>
+<a href="/dishes">Назад к списку блюд</a>
 </body>
 </html>

@@ -24,12 +24,12 @@
             <td border="2">{{ $dish->name }}</td>
             <td border="2">{{ $dish->category->name ?? 'Нет категории' }}</td>
             <td border="2">
-                <form action="{{ route('dishes.destroy', $dish->id) }}" method="POST" style="display: inline;">
+                <form action="/dishes/{{ $dish->id }}" method="POST" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить это блюдо?')">Удалить</button>
                 </form>
-                <a href="{{ route('dishes.edit', $dish->id) }}">Редактировать</a>
+                <a href="/dishes/{{ $dish->id }}/edit">Редактировать</a>
             </td>
         </tr>
     @endforeach
@@ -38,6 +38,6 @@
 
 {{ $dishes->links() }}
 
-<a href="{{ route('dishes.create') }}">Добавить новое блюдо</a>
+<a href="/dishes/create">Добавить новое блюдо</a>
 </body>
 </html>

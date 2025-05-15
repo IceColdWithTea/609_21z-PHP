@@ -41,12 +41,12 @@
     </nav>
 
     <div>
-        <form method="GET" action="{{ route('dishes.index') }}">
+        <form method="GET" action="{{ url('dishes') }}">
             <label for="perPage">Элементов на странице:</label>
             <select name="perPage" id="perPage" onchange="this.form.submit()">
-                <option value="2" {{ request('perPage') == 2 ? 'selected' : '' }}>2</option>
-                <option value="3" {{ request('perPage') == 3 ? 'selected' : '' }}>3</option>
-                <option value="4" {{ request('perPage') == 4 ? 'selected' : '' }}>4</option>
+                <option value="2" @if($paginator->perPage() == 2) selected @endif>2</option>
+                <option value="3" @if($paginator->perPage() == 3) selected @endif>3</option>
+                <option value="4" @if($paginator->perPage() == 4) selected @endif>4</option>
             </select>
         </form>
     </div>
